@@ -1,5 +1,5 @@
 export default {
-	home: '/',
-	contact: '/contact',
-	profile: '/profile',
+  home: '/',
+  contact: '/contact',
+  profile: '/profile',
 };

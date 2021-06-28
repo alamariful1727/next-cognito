@@ -1,5 +1,19 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Prettier
+
+In the project directory, you can run:
+
+### `npx prettier --write .`
+
+Prettify your files.<br/>
+
+`.prettierrc`<br/>
+Write your rules here.<br/>
+
+`.prettierignore`<br/>
+Add your ignored files or folder path here.<br/>
+
 ## Getting Started
 
 First, run the development server:
