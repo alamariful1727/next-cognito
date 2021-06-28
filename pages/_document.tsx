@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { App_Description, App_Title, Profile_Image_URL, Social } from '../utils';
+import { App_Description, App_Title, Profile_Image_URL, Social } from '../config';
 
 class MyDocument extends Document {
   render() {

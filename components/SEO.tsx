@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { App_Description, App_Title, Profile_Image_URL, Social } from '../utils';
+import { App_Description, App_Title, Profile_Image_URL, Social } from '../config';
 
 type props = {
   siteTitle?: string;

@@ -1,5 +1,8 @@
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Social } from '../utils';
+import { useRouter } from 'next/router';
+import { Hub, Auth } from 'aws-amplify';
+import { Social } from '../config';
 import paths from '../utils/paths';
 import SEO from '../components/SEO';
 
@@ -8,6 +11,35 @@ interface props {
 }
 
 const Layout = ({ children }: props) => {
+  const router = useRouter();
+  const [isLogin, setIsLogin] = useState(false);
+
+  const handleLogout = async () => {
+    await Auth.signOut();
+    router.push('/');
+  };
+
+  // ? AUTH: client-side
+  useEffect(() => {
+    async function authListener() {
+      Hub.listen('auth', (data) => {
+        switch (data.payload.event) {
+          case 'signIn':
+            return setIsLogin(true);
+          case 'signOut':
+            return setIsLogin(false);
+        }
+      });
+      try {
+        await Auth.currentAuthenticatedUser();
+        setIsLogin(true);
+      } catch (err) {
+        setIsLogin(false);
+      }
+    }
+    authListener();
+  });
+
   return (
     <div>
       <SEO />
@@ -16,16 +48,32 @@ const Layout = ({ children }: props) => {
           <Link href={paths.home}>
             <a className="font-bold text-xl">Next Cognito</a>
           </Link>
-          <div className="flex space-x-3">
-            <Link href={paths.contact}>
-              <a className="text-yellow-400 capitalize underline">contact us</a>
-            </Link>
-            <Link href={paths.profile}>
-              <a className="text-yellow-400 capitalize underline">Profile</a>
-            </Link>
+          <Link href={paths.browse}>
+            <a className="text-white font-semibold capitalize hover:underline">Browse</a>
+          </Link>
+          <div className="space-x-3">
+            {isLogin ? (
+              <>
+                <Link href={paths.profile}>
+                  <a className="text-white font-semibold capitalize hover:underline">Profile</a>
+                </Link>
+                <button onClick={handleLogout} className="text-white font-semibold capitalize hover:underline">
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link href={paths.signin}>
+                  <a className="text-white font-semibold capitalize hover:underline">Sign In</a>
+                </Link>
+                <Link href={paths.contact}>
+                  <a className="text-white font-semibold capitalize hover:underline">contact us</a>
+                </Link>
+              </>
+            )}
           </div>
         </header>
-        <div className="flex-1 px-6 my-16 sm:px-0 container mx-auto">{children}</div>
+        <div className="flex-1 container mx-auto px-6 my-16">{children}</div>
         <footer className="h-12 flex justify-center items-center bg-gray-800">
           <p className="text-white font-medium">
             © {new Date().getFullYear()} Developed by{' '}
