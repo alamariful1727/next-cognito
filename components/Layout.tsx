@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import Head from 'next/head';
-import { App_Title } from '../utils';
 import paths from '../utils/paths';
 
 interface props {
@@ -10,13 +8,6 @@ interface props {
 const Layout = ({ children }: props) => {
 	return (
 		<div>
-			<Head>
-				<title>{App_Title}</title>
-				<meta charSet='utf-8' />
-				<meta name='viewport' content='initial-scale=1.0, width=device-width' />
-				<link rel='icon' href='/favicon.ico' />
-			</Head>
-
 			<div className='flex flex-col min-h-screen'>
 				<header className='h-16 flex justify-between items-center px-6 bg-gray-800 text-white font-medium'>
 					<Link href={paths.home}>

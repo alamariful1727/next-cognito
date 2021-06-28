@@ -1,12 +1,9 @@
-import Head from 'next/head';
-import { App_Title } from '../utils';
+import SEO from '../components/SEO';
 
 const Contact = () => {
 	return (
 		<div>
-			<Head>
-				<title>Contact | {App_Title}</title>
-			</Head>
+			<SEO siteTitle='Contact' />
 			<h1>Contact</h1>
 		</div>
 	);
