@@ -6,11 +6,13 @@ import './../styles/tailwind.css';
 import { ThemeProvider } from '@material-ui/core';
 import { theme } from '../config/mui';
 import '../config/amplify';
+import NextNprogress from 'nextjs-progressbar';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
+        <NextNprogress color="#4BE193" startPosition={0.1} stopDelayMs={200} height={3} showOnShallow={true} />
         <Component {...pageProps} />
       </Layout>
     </ThemeProvider>
