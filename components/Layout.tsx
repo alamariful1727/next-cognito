@@ -43,7 +43,7 @@ const Layout = ({ children }: props) => {
   return (
     <div>
       <SEO />
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen bg-gray-200">
         <header className="h-16 flex justify-between items-center px-6 bg-gray-800 text-white font-medium">
           <Link href={paths.home}>
             <a className="font-bold text-xl">Next Cognito</a>
