@@ -18,7 +18,7 @@ export const SEO = ({ siteTitle, description, url, image }: props) => {
 
       {/* <!-- Open Graph / Facebook --> */}
       <meta property="og:type" content="website" />
-      <meta property="og:title" content={App_Title} />
+      <meta property="og:title" content={siteTitle ? `${App_Title} | ${siteTitle}` : App_Title} />
       <meta property="og:site_name" content={siteTitle} />
       <meta property="og:description" content={description || App_Description} />
       <meta property="og:url" content={url || Social.linkedin} />
