@@ -2,9 +2,9 @@ import SEO from '../components/SEO';
 
 const Browse = () => {
   return (
-    <div>
-      <SEO siteTitle="Browse" />
-      <h1>Browse</h1>
+    <div className="space-y-3">
+      <SEO siteTitle="Browse" description="Browse movies & series here." />
+      <h1 className="text-2xl text-gray-800 font-semibold">Browse</h1>
     </div>
   );
 };

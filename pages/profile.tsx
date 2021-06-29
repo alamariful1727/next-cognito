@@ -9,9 +9,21 @@ type props = {
 
 const Profile = ({ user }: props) => {
   return (
-    <div>
-      <SEO siteTitle="Profile" />
-      <h1>Hello {user.email} from SSR route!</h1>
+    <div className="space-y-3">
+      <SEO siteTitle="Profile" description="User profile." />
+      <h1 className="text-2xl text-gray-800 font-semibold">Profile</h1>
+      <p className="font-semibold">Hello, {user.given_name + ' ' + user.family_name}</p>
+      <div className="space-y-1">
+        <h2>
+          <span className="font-semibold">ID :</span> {user.sub}
+        </h2>
+        <h2>
+          <span className="font-semibold">Email :</span> {user.email}
+        </h2>
+        <h2>
+          <span className="font-semibold">Role :</span> {user.role}
+        </h2>
+      </div>
     </div>
   );
 };

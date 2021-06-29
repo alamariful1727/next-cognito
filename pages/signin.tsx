@@ -71,7 +71,7 @@ const SignIn = () => {
 
   return (
     <div>
-      <SEO siteTitle="Sign In" />
+      <SEO siteTitle="Sign In" description="Next cognito typescript sign-in." />
       <TyphoonBackdrop open={isSubmitting} />
       <div className="max-w-md mx-auto">
         <h1 className="text-gray-800 text-2xl font-semibold mb-5">Sign In</h1>
