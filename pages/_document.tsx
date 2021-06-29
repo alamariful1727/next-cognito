@@ -13,22 +13,22 @@ class MyDocument extends Document {
           <meta name="apple-mobile-web-app-capable" content="yes" />
 
           {/* <!-- Primary Meta Tags --> */}
-          <meta name="description" content={App_Description} />
+          {/* <meta name="description" content={App_Description} /> */}
 
           {/* <!-- Open Graph / Facebook --> */}
-          <meta property="og:type" content="website" />
+          {/* <meta property="og:type" content="website" />
           <meta property="og:title" content={App_Title} />
           <meta property="og:description" content={App_Description} />
           <meta property="og:url" content={Social.linkedin} />
-          <meta property="og:image" content={Profile_Image_URL} />
+          <meta property="og:image" content={Profile_Image_URL} /> */}
 
           {/* <!-- Twitter --> */}
-          <meta property="twitter:card" content="summary_large_image" />
+          {/* <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:creator" content={Social.twitter} />
           <meta property="twitter:title" content={App_Title} />
           <meta property="twitter:description" content={App_Description} />
           <meta property="twitter:url" content={Social.linkedin} />
-          <meta property="twitter:image" content={Profile_Image_URL} />
+          <meta property="twitter:image" content={Profile_Image_URL} /> */}
 
           <link rel="icon" href="/favicon.ico" />
         </Head>
