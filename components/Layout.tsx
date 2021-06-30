@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import { Hub, Auth } from 'aws-amplify';
 import { Social } from '@/config/index';
 import paths from '@/utils/paths';
-import SEO from '@/components/SEO';
 
 interface props {
   children: React.ReactNode;
@@ -42,7 +41,6 @@ const Layout = ({ children }: props) => {
 
   return (
     <div>
-      <SEO />
       <div className="flex flex-col min-h-screen bg-gray-200">
         <header className="h-16 flex justify-between items-center px-6 bg-gray-800 text-white font-medium">
           <Link href={paths.home}>
