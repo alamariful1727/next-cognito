@@ -1,7 +1,7 @@
 import { withSSRContext } from 'aws-amplify';
 import { GetServerSideProps } from 'next';
-import SEO from '../components/SEO';
-import { IUser } from '../types';
+import SEO from '@/components/SEO';
+import { IUser } from '@/types/index';
 
 type props = {
   user: IUser;

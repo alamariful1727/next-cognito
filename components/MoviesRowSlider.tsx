@@ -2,8 +2,8 @@ import Axios from 'axios';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useQuery } from 'react-query';
-import { API_ENDPOINT_LAMBDA, s3FileUrl } from '../config';
-import { categoryTypes, ISeason, IStandAloneMovie } from '../types';
+import { API_ENDPOINT_LAMBDA, s3FileUrl } from '@/config/index';
+import { categoryTypes, ISeason, IStandAloneMovie } from '@/types/index';
 
 const fetchMovies = async ({ categoryName, seasonId }: { categoryName: categoryTypes; seasonId?: string }) => {
   const querystring = `isActive=true&category=${categoryName}&${

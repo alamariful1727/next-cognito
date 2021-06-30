@@ -1,12 +1,12 @@
 import type { AppProps } from 'next/app';
 import React from 'react';
 import NextNprogress from 'nextjs-progressbar';
-import Layout from '../components/Layout';
+import Layout from '@/components/Layout';
 import { ThemeProvider } from '@material-ui/core';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import { theme } from '../config/mui';
-import '../config/amplify';
+import { theme } from '@/config/mui';
+import '@/config/amplify';
 import 'react-toastify/dist/ReactToastify.css';
 import './../styles/tailwind.css';
 

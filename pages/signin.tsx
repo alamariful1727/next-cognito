@@ -5,15 +5,15 @@ import { emailRegex, lowercaseRegex, uppercaseRegex, numericRegex, specialCharRe
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Auth } from 'aws-amplify';
-import SEO from '../components/SEO';
-import TyphoonBackdrop from '../components/TyphoonBackdrop';
-import TyphoonToaster from '../components/TyphoonToaster';
+import SEO from '@/components/SEO';
+import TyphoonBackdrop from '@/components/TyphoonBackdrop';
+import TyphoonToaster from '@/components/TyphoonToaster';
 import TextField from '@material-ui/core/TextField/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment/InputAdornment';
 import IconButton from '@material-ui/core/IconButton/IconButton';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
-import { IUser } from '../types';
+import { IUser } from '@/types/index';
 
 const validationSchema = yup.object().shape({
   email: yup.string().required('Required').matches(emailRegex, 'Invalid email format'),

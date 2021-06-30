@@ -1,5 +1,5 @@
-import SEO from '../components/SEO';
-import MoviesRowSlider from '../components/MoviesRowSlider';
+import SEO from '@/components/SEO';
+import MoviesRowSlider from '@/components/MoviesRowSlider';
 
 const Browse = () => {
   return (

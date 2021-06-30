@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Hub, Auth } from 'aws-amplify';
-import { Social } from '../config';
-import paths from '../utils/paths';
-import SEO from '../components/SEO';
+import { Social } from '@/config/index';
+import paths from '@/utils/paths';
+import SEO from '@/components/SEO';
 
 interface props {
   children: React.ReactNode;
